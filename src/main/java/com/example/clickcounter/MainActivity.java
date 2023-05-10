@@ -1,11 +1,7 @@
 package com.example.clickcounter;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
@@ -26,13 +22,12 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            return super.onKeyDown(keyCode, event);
-        }
         if (keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
             maisUm(findViewById(R.id.btn_hemacia));
+            return true;
         } else if (keyCode == KeyEvent.KEYCODE_VOLUME_DOWN){
             maisUm(findViewById(R.id.btn_leucocito));
+            return true;
         }
         return super.onKeyDown(keyCode, event);
     }
